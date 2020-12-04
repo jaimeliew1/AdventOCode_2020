@@ -1,5 +1,6 @@
 from itertools import combinations
 
+
 def main():
     data = []
     with open("data/data_1.txt", "r") as f:
@@ -8,7 +9,8 @@ def main():
 
     for x, y in combinations(data, 2):
         if x + y == 2020:
-            print(x, y, x * y)
+            return x * y
 
-if __name__ == '__main__':
-    main()
+
+if __name__ == "__main__":
+    print(main())

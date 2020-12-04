@@ -4,9 +4,10 @@ protostring = "{vmin}-{vmax} {c}: {password}"
 
 
 def is_valid(password, c, vmin, vmax):
-    count = sum(1 for x in password if x == c)
-    if int(vmin) <= count <= int(vmax):
-        return True
+    first = password[int(vmin) - 1] == c
+    second = password[int(vmax) - 1] == c
+
+    return first != second
 
 
 def main():
@@ -16,7 +17,6 @@ def main():
             data = parse.parse(protostring, line).named
             if is_valid(data["password"], data["c"], data["vmin"], data["vmax"]):
                 count += 1
-
     return count
 
 
