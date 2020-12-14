@@ -1,5 +1,3 @@
-
-
 def main():
     with open("data/data_6.txt", "r") as f:
         data = f.read()
@@ -8,7 +6,7 @@ def main():
     data = data.split("\n\n")
 
     for x in data:
-        count += len(set(x.replace('\n', '')))
+        count += len(set(x.replace("\n", "")))
 
     return count
 
